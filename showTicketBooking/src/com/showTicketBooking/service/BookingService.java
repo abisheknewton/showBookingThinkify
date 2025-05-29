@@ -6,7 +6,9 @@ import com.showTicketBooking.model.Booking;
 
 public interface BookingService {
 	public List<Booking> viewAllBookings();
+
 	public String addBooking();
+
 	public String cancelBooking();
-	
+
 }

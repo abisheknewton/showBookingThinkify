@@ -33,7 +33,7 @@ public class WaitlistManager implements SlotObserver {
 			slot.getBookings().add(waitlistedBooking);
 			db.bookingsById.put(waitlistedBooking.getId(), waitlistedBooking);
 			db.userBookings.computeIfAbsent(waitlistedBooking.getUser(), k -> new ArrayList<>()).add(waitlistedBooking);
-			slot.getWaitlist().poll(); 
+			slot.getWaitlist().poll();
 			db.bookingQueue.remove(waitlistedBooking);
 			System.out.println("Waitlisted user " + waitlistedBooking.getUser() + " has been auto-booked for "
 					+ showName + " at " + slotTime);

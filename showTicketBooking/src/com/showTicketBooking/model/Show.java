@@ -4,14 +4,13 @@ import java.time.LocalTime;
 import java.util.HashMap;
 import java.util.Map;
 
-
 public class Show {
-    private String name;
-    private String genre;
-    private Map<LocalTime, Slot> slots;
-    private int totalTicketsBooked;
+	private String name;
+	private String genre;
+	private Map<LocalTime, Slot> slots;
+	private int totalTicketsBooked;
 
-    public int getTotalTicketsBooked() {
+	public int getTotalTicketsBooked() {
 		return totalTicketsBooked;
 	}
 
@@ -20,24 +19,24 @@ public class Show {
 	}
 
 	public Show(String name, String genre) {
-        this.name = name;
-        this.genre = genre;
-        this.slots = new HashMap<>();
-    }
+		this.name = name;
+		this.genre = genre;
+		this.slots = new HashMap<>();
+	}
 
-    public String getName() {
-        return name;
-    }
+	public String getName() {
+		return name;
+	}
 
-    public String getGenre() {
-        return genre;
-    }
+	public String getGenre() {
+		return genre;
+	}
 
-    public Map<LocalTime, Slot> getSlots() {
-        return slots;
-    }
+	public Map<LocalTime, Slot> getSlots() {
+		return slots;
+	}
 
-    public void setName(String name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 
@@ -50,8 +49,8 @@ public class Show {
 	}
 
 	public void addSlot(LocalTime time, Slot slot) {
-        this.slots.put(time, slot);
-    }
+		this.slots.put(time, slot);
+	}
 
 //    @Override
 //    public String toString() {
@@ -74,15 +73,14 @@ public class Show {
 //	}
 	@Override
 	public String toString() {
-	    StringBuilder sb = new StringBuilder();
-	    sb.append(String.format("Show Name: %s | Genre: %s%n", name, genre));
-	    sb.append("Slots:\n");
+		StringBuilder sb = new StringBuilder();
+		sb.append(String.format("Show Name: %s | Genre: %s%n", name, genre));
+		sb.append("Slots:\n");
 
-	    slots.entrySet().stream()
-	        .sorted(Map.Entry.comparingByKey())
-	        .forEach(entry -> sb.append("  ").append(entry.getValue()).append("\n"));
+		slots.entrySet().stream().sorted(Map.Entry.comparingByKey())
+				.forEach(entry -> sb.append("  ").append(entry.getValue()).append("\n"));
 
-	    return sb.toString();
+		return sb.toString();
 	}
 
 }
